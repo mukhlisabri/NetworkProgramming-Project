@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  ansible-control:
+    build: .
+    container_name: ansible-control
+    volumes:
+      - ../:/ansible_project
+    networks:
+      - lab-network
+
+  linux-target:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: linux-target
+    environment:
+      - USER_NAME=ansible
+      - USER_PASSWORD=password
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge
