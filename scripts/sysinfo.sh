@@ -14,3 +14,10 @@ free -h
 echo ""
 echo "--- Disk Usage ---"
 df -h --total | grep -E "^Filesystem|total"
+echo ""
+echo "--- Logged-in Users ---"
+who
+
+echo ""
+echo "--- Top 5 Processes by CPU ---"
+ps aux --sort=-%cpu | head -6
