@@ -20,4 +20,4 @@ who
 
 echo ""
 echo "--- Top 5 Processes by CPU ---"
-ps aux --sort=-%cpu | head -6
+ps -eo user,pid,%cpu,%mem,comm --sort=-%cpu | head -6

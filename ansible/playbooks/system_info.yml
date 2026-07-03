@@ -1,0 +1,14 @@
+---
+- name: Collect and display Linux system information
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Run the system information script
+      script: ../../scripts/sysinfo.sh
+      register: sysinfo_output
+
+    - name: Display the system information report
+      debug:
+        msg: "{{ sysinfo_output.stdout_lines }}"
