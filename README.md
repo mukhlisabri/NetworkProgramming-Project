@@ -13,21 +13,26 @@ scripts/  - Scripts for Linux system information collection
 # How to Run
 
 1. Clone the repo.
+   
 2. Start the docker environment:
     ```text
     cd docker
     docker compose up -d
     ```
-4. In ansible/inventory.ini, set ansible_host under [routers] to your own CSR1000v IP (e.g., 192.168.56.101).
-5. Enter the Ansible control container:
+    
+3. In ansible/inventory.ini, set ansible_host under to your own CSR1000v IP (e.g., 192.168.56.101)
+   
+4. Enter the Ansible control container:
    ```text
    docker exec -it ansible-control bash
    ```
-7. From inside ansible/, run the playbooks:
+   
+5. From inside ansible/, run the playbooks:
    ```text
     ansible-playbook device_config_a.yaml -i inventory.ini
     ansible-playbook device_config_b.yaml -i inventory.ini
     ansible-playbook device_config_c.yaml -i inventory.ini
     ```
-Notes
+
+Note:
 Ensure your Cisco CSR1000v VM is powered on and fully booted before running the Ansible playbooks.
