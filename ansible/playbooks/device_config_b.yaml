@@ -1,7 +1,7 @@
 ---
 - name: Configure Banner and Interface description
   hosts: routers
-  gather_facts: no
+  gather_facts: false
 
   tasks:
     - name: Set MOTD Banner message
