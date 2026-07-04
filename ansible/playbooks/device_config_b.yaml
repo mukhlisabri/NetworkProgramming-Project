@@ -1,1 +1,10 @@
+- name: Configure Banner
+  hosts: routers
+  gather_facts: no
 
+  tasks:
+    - name: Set MOTD Banner message
+      cisco.ios.ios_banner:
+        banner: motd
+        text: "WARNING: Authorized Access Only. Configured by HUZSA."
+        state: present
