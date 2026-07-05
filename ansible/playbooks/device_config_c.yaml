@@ -34,7 +34,7 @@
 
     - name: Display Running Configuration
       debug:
-        msg: "{{ running_config.stdout }}"
+        msg: "{{ running_config.stdout_lines }}"
 
     - name: Display Interface Summary
       debug:
