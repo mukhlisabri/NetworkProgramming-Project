@@ -21,13 +21,13 @@
         lines:
           - username admin privilege 15 secret Cisco123
 
-    - name: Verify Interface Configuration
+    - name: Verify Router Interface Configuration
       cisco.ios.ios_command:
         commands:
           - show ip interface brief
       register: interface_output
 
-    - name: Verify User Account
+    - name: Verify Local User Account
       cisco.ios.ios_command:
         commands:
           - show running-config | include username
