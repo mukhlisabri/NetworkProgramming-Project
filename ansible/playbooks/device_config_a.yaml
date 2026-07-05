@@ -1,3 +1,7 @@
+#by Muhammad Hazim Bin Abdullah B24CS0027
+# Playbook A
+# Configure router interface and create local administrator account
+
 ---
 - name: Configure IP Address and Create User Account
   hosts: routers
