@@ -10,6 +10,10 @@
         lines:
           - ip route 192.168.100.0 255.255.255.0 192.168.56.1
 
+        - name: Save Configuration
+      cisco.ios.ios_config:
+        save_when: modified
+
     - name: Show IOS Version
       cisco.ios.ios_command:
         commands:
