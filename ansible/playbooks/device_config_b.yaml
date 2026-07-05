@@ -1,0 +1,17 @@
+---
+- name: Configure Banner and Interface description
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: Set MOTD Banner message
+      cisco.ios.ios_banner:
+        banner: motd
+        text: "WARNING: Authorized Access Only. Configured by HUZSA."
+        state: present
+
+    - name: Add Interface description
+      cisco.ios.ios_config:
+        lines:
+          - description Ansible Configured Interface
+        parents: interface GigabitEthernet1

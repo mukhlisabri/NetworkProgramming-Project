@@ -2,7 +2,7 @@
 - name: Collect and display Linux system information
   hosts: localhost
   connection: local
-  gather_facts: no
+  gather_facts: false
 
   tasks:
     - name: Run the system information script
