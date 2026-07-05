@@ -15,3 +15,23 @@
         lines:
           - description Ansible Configured Interface
         parents: interface GigabitEthernet1
+
+    - name: Verify Banner Configuration
+      cisco.ios.ios_command:
+        commands:
+          - show running-config | section banner
+      register: banner_output
+
+    - name: Verify Interface Description
+      cisco.ios.ios_command:
+        commands:
+          - show running-config interface GigabitEthernet1
+      register: interface_output
+
+    - name: Display Banner
+      debug:
+        msg: "{{ banner_output.stdout_lines }}"
+
+    - name: Display Interface Description
+      debug:
+        msg: "{{ interface_output.stdout_lines }}"
