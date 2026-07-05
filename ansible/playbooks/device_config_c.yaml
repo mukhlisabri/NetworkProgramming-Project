@@ -1,0 +1,41 @@
+---
+- name: Configure Static Route and Retrieve Device Information
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+
+    - name: Configure Static Route
+      cisco.ios.ios_config:
+        lines:
+          - ip route 192.168.100.0 255.255.255.0 192.168.56.1
+
+    - name: Show IOS Version
+      cisco.ios.ios_command:
+        commands:
+          - show version
+      register: version_output
+
+    - name: Show Running Configuration
+      cisco.ios.ios_command:
+        commands:
+          - show running-config
+      register: running_config
+
+    - name: Show Interface Summary
+      cisco.ios.ios_command:
+        commands:
+          - show ip interface brief
+      register: interface_output
+
+    - name: Display IOS Version
+      debug:
+        msg: "{{ version_output.stdout }}"
+
+    - name: Display Running Configuration
+      debug:
+        msg: "{{ running_config.stdout }}"
+
+    - name: Display Interface Summary
+      debug:
+        msg: "{{ interface_output.stdout }}"
