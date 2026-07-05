@@ -16,7 +16,7 @@
         lines:
           - ip address 192.168.56.101 255.255.255.0
           - no shutdown
-          
+
 # Create administrator account
     - name: Create Local User Account
       cisco.ios.ios_config:
@@ -39,6 +39,6 @@
       debug:
         msg: "{{ interface_output.stdout_lines }}"
 
-    - name: Display User Information
+    - name: Display Local User Account Information
       debug:
         msg: "{{ user_output.stdout_lines }}"
