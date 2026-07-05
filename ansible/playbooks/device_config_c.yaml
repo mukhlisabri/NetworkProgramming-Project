@@ -30,7 +30,7 @@
 
     - name: Display IOS Version
       debug:
-        msg: "{{ version_output.stdout }}"
+        msg: "{{ version_output.stdout_lines }}"
 
     - name: Display Running Configuration
       debug:
