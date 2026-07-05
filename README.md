@@ -1,4 +1,4 @@
-# NetworkProgramming Automated Dashboard
+# Network Programming Automated Dashboard
 
 This project automates a network and system administration workflow. It uses Docker to create an isolated lab environment, Ansible to configure a Cisco CSR1000v router, and a script to check Linux system health.
 
