@@ -1,4 +1,11 @@
 ---
+# Member 4: ARIP
+# Name: MUHAMMAD ARIFF BIN BAHARUDDIN
+# Matric No: B24CS0020
+#Task:
+#   1. Configure Static Route
+#   2. Retrieve Device Information
+
 - name: Configure Static Route and Retrieve Device Information
   hosts: routers
   gather_facts: false
