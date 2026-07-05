@@ -31,8 +31,8 @@
 
     - name: Display Interface Information
       debug:
-        msg: "{{ interface_output.stdout }}"
+        msg: "{{ interface_output.stdout_lines}}"
 
     - name: Display User Information
       debug:
-        msg: "{{ user_output.stdout }}"
+        msg: "{{ user_output.stdout_lines }}"
