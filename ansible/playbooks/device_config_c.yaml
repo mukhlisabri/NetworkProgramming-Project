@@ -34,12 +34,12 @@
 
     - name: Display IOS Version
       debug:
-        msg: "{{ version_output.stdout }}"
+        msg: "{{ version_output.stdout[0] }}"
 
     - name: Display Running Configuration
       debug:
-        msg: "{{ running_config.stdout }}"
+        msg: "{{ running_config.stdout[0] }}"
 
     - name: Display Interface Summary
       debug:
-        msg: "{{ interface_output.stdout }}"
+        msg: "{{ interface_output.stdout[0] }}"
