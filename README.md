@@ -26,9 +26,14 @@ scripts/  - Scripts for Linux system information collection
    ```text
    docker exec -it ansible-control bash
    ```
-   
-5. From inside ansible/, run the playbooks:
+5. Turn off host key checking (to prevent SSH errors):
    ```text
+   export ANSIBLE_HOST_KEY_CHECKING=False
+   ```
+
+6. Move to the ansible folder and run the playbooks
+   ```text
+   cd ansible
     ansible-playbook device_config_a.yaml -i inventory.ini
     ansible-playbook device_config_b.yaml -i inventory.ini
     ansible-playbook device_config_c.yaml -i inventory.ini
